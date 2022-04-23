@@ -2,6 +2,7 @@
   "name": "twenty-five-plus-five-clock",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mzs21.github.io/pomodoro-clock",
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.4",
