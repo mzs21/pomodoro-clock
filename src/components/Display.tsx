@@ -6,9 +6,9 @@ let FIFTEEN_HUNDRED = 25 * 60;
 let THREE_HUNDRED = 5 * 60;
 
 const Display = () => {
-  const [displayTime, setDisplayTime] = useState<number>(5);
-  const [breakTime, setBreakTime] = useState<number>(3);
-  const [sessionTime, setSessionTime] = useState<number>(5);
+  const [displayTime, setDisplayTime] = useState<number>(FIFTEEN_HUNDRED);
+  const [breakTime, setBreakTime] = useState<number>(THREE_HUNDRED);
+  const [sessionTime, setSessionTime] = useState<number>(FIFTEEN_HUNDRED);
   const [timerOn, setTimerOn] = useState<boolean>(false);
   const [onBreak, setOnBreak] = useState<boolean>(false);
   const [breakAudio, setBreakAudio] = useState<HTMLAudioElement>(
@@ -71,10 +71,10 @@ const Display = () => {
               // if session time is up, start break
               playBeepSound();
               onBreakVar = true;
-              console.log(onBreak);
               setOnBreak(true);
               return breakTime; // change display time to break time
-            } else if (prev <= 0 && onBreakVar) {
+            } 
+            else if (prev <= 0 && onBreakVar) {
               playBeepSound();
               onBreakVar = false;
               setOnBreak(false);
@@ -123,7 +123,7 @@ const Display = () => {
           changeTime={changeTime}
         />
       </div>
-      <h3 className="sub-headline">{onBreak ? "Break" : "Session"}</h3>
+
       <h1 className="display-time">{formatTime(displayTime)}</h1>
 
       <div className="display-icons">
